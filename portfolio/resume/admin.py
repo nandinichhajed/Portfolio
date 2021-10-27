@@ -26,3 +26,8 @@ class MediaAdmin(admin.ModelAdmin):
 class PortfolioAdmin(admin.ModelAdmin):
     list_display = ('id','name','is_active')
     readonly_fields = ('slug',)
+
+@admin.register(Blog)
+class BlogAdmin(admin.ModelAdmin):
+    list_display = ('id','name','is_active')
+    readonly_fields = ('slug',)
