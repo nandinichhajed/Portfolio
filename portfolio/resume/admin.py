@@ -13,3 +13,7 @@ class UserProfileAdmin(admin.ModelAdmin):
 @admin.register(ContactProfile)
 class ContactProfileAdmin(admin.ModelAdmin):
     list_display = ('id','timestamp', 'name')
+
+@admin.register(Testimonial)
+class TestimonialAdmin(admin.ModelAdmin):
+    list_display = ('id','is_active', 'name')
