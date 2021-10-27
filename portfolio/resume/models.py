@@ -48,7 +48,7 @@ class ContactProfile(models.Model):
         return f'{self.name}'
     
 class Testimonial(models.Model):
-    thumbnail = models.ImageField(blank=True, null=True, upload_to=None, height_field="testimonials",)
+    thumbnail = models.ImageField(blank=True, null=True, upload_to="testimonials")
     name = models.CharField(max_length=200, blank=True, null=True)
     role = models.CharField(max_length=200, blank=True, null=True)
     quote = models.CharField(max_length=200, blank=True, null=True)
@@ -61,4 +61,3 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return self.name
-    
