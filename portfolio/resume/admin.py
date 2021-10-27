@@ -5,3 +5,11 @@ from . models import *
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'score')
+
+@admin.register(UserProfile)
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ('id', 'user')
+
+@admin.register(ContactProfile)
+class ContactProfileAdmin(admin.ModelAdmin):
+    list_display = ('id','timestamp', 'name')
