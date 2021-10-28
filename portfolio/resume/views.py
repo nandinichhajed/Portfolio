@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib import messages
-from . models import *
+from .models import *
 from django.views import generic
 from . forms import ContactForm
 # Create your views here.
@@ -21,7 +21,7 @@ class IndexView(generic.TemplateView):
         blog = Blog.objects.filter(is_active=True)
         return context
 
-class ContactViewI(generic.FormView):
+class ContactView(generic.FormView):
     teplate_name = "main/contact.html"
     form_class = ContactForm
     success_url = "/"
@@ -40,8 +40,8 @@ class PortfolioView(generic.ListView):
         return super().get_queryset().filter(is_active=True)
 
 class PortfolioDetailView(generic.DetailView):
-    	model = Portfolio
-	    template_name = "main/portfolio-detail.html"
+    model = Portfolio
+    template_name = "main/portfolio-detail.html"
 
 class BlogView(generic.ListView):
 	model = Blog
