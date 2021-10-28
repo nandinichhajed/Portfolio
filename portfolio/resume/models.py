@@ -76,7 +76,7 @@ class Media(models.Model):
     def save(self, *args, **kwargs):
         if self.url:
             self.is_image = False
-        super(Media, self).save(*arg, **kwargs)
+        super(Media, self).save(*args, **kwargs)
     
     def __str__(self):
         return self.name
