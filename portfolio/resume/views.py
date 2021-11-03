@@ -3,6 +3,8 @@ from django.contrib import messages
 from .models import *
 from django.views import generic
 from . forms import ContactForm
+from django.views.generic import ListView
+from django.core.paginator import Paginator
 # Create your views here.
 
 class IndexView(generic.TemplateView):

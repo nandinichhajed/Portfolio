@@ -83,18 +83,18 @@ class Media(models.Model):
 
 class Portfolio(models.Model):
     date = models.DateTimeField(blank=True, null=True)
-    name = models.CharField(max_length=200,blank=True, null=True)
-    description = models.CharField(max_length=50,blank=True, null=True)
+    name = models.CharField(max_length=200, blank=True, null=True)
+    description = models.CharField(max_length=500, blank=True, null=True)
     body = RichTextField(blank=True, null=True)
-    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=None)
-    slug = models.SlugField(blank=True, null=True)
+    image = models.ImageField(blank=True, null=True, upload_to="portfolio")
+    slug = models.SlugField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
 
     class Meta:
         verbose_name_plural = 'Portfolio Profiles'
         verbose_name = 'Portfolio'
         ordering = ["name"]
-    
+
     def save(self, *args, **kwargs):
         if not self.id:
             self.slug = slugify(self.name)
