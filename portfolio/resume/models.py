@@ -51,7 +51,7 @@ class Testimonial(models.Model):
     thumbnail = models.ImageField(blank=True, null=True, upload_to="testimonials")
     name = models.CharField(max_length=200, blank=True, null=True)
     role = models.CharField(max_length=200, blank=True, null=True)
-    quote = models.CharField(max_length=200, blank=True, null=True)
+    quote = models.TextField(max_length=1000, blank=True, null=True)
     is_active = models.BooleanField(default=True)
 
     class Meta:
