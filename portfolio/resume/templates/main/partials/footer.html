@@ -6,11 +6,15 @@ Start Footer
     <div class="footerCol">
     <div class="container">
         <ul class="socialCol">
-        <li><a href="https://facebook.com/nandinichhajed08"><i class="fab fa-facebook big-icon" ></i></a></li>
-        <li><a href="https://www.instagram.com/nandini_chhajed_"><i class="fab fa-instagram big-icon" ></i></a></li>
-        <li><a href="https://github.com/nandinichhajed"><i class="fab fa-github big-icon" ></i></a></li>
-        <li><a href="https://twitter.com/nandini_chhajed"><i class="fab fa-twitter big-icon" ></i></a></li>
-        <li><a href="https://linkedin.com/in/nandinichhajed"><i class="fab fa-linkedin big-icon" ></i></a></li>
+        {% for li in you %}
+
+        <li><a href="{{ li.facebook }}"><i class="fab fa-facebook big-icon" ></i></a></li>
+        <li><a href="{{ li.instagram }}"><i class="fab fa-instagram big-icon" ></i></a></li>
+        <li><a href="{{ li.github }}"><i class="fab fa-github big-icon" ></i></a></li>
+        <li><a href="{{ li.twitter }}"><i class="fab fa-twitter big-icon" ></i></a></li>
+        <li><a href="{{ li.linkdin }}"><i class="fab fa-linkedin big-icon" ></i></a></li>
+
+        {% endfor %}
 
         </ul>
         <div class="copyrightCol">
