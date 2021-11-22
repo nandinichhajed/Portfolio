@@ -86,7 +86,7 @@ class Portfolio(models.Model):
     name = models.CharField(max_length=200, blank=True, null=True)
     description = models.CharField(max_length=500, blank=True, null=True)
     body = RichTextField(blank=True, null=True)
-    image = models.ImageField(blank=True, null=True, upload_to="portfolio")
+    image = models.ImageField(blank=True, upload_to="portfolio")
     slug = models.SlugField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
 
