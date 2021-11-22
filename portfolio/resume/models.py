@@ -134,8 +134,9 @@ class Blog(models.Model):
 
 class Certificate(models.Model):
     
-    date = models.DateTimeField(blank=True, null=True)
-    name = models.CharField(max_length=50, blank=True, null=True)
+    issue_date = models.DateField(blank=True, null=True)
+    created_date = models.DateTimeField(blank=True, null=True)
+    academy = models.CharField(max_length=50, blank=True, null=True)
     title = models.CharField(max_length=200, blank=True, null=True)
     description = models.CharField(max_length=500, blank=True, null=True)
     image = models.FileField(blank=True, null=True, upload_to='Certificate')
@@ -147,4 +148,4 @@ class Certificate(models.Model):
         verbose_name = 'Certificate'
 
     def __str__(self):
-        return self.name
+        return self.title
