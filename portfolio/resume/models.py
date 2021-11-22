@@ -139,6 +139,7 @@ class Certificate(models.Model):
     title = models.CharField(max_length=200, blank=True, null=True)
     description = models.CharField(max_length=500, blank=True, null=True)
     image = models.FileField(blank=True, null=True, upload_to='Certificate')
+    certificate_link = models.CharField(max_length=200)
     is_active = models.BooleanField(default=True)
 
     class Meta:
