@@ -14,9 +14,9 @@ class IndexView(generic.TemplateView):
         context = super().get_context_data(**kwargs)
 		
         testimonials = Testimonial.objects.filter(is_active=True)
-        certificates = Certificate.objects.filter(is_active=True)
+        certificates = Certificate.objects.filter(is_active=True).order_by('-issue_date')
         blogs = Blog.objects.filter(is_active=True)
-        portfolio = Portfolio.objects.filter(is_active=True)
+        portfolio = Portfolio.objects.filter(is_active=True).order_by('-date')[:3]
 		
         context["testimonials"] = testimonials
         context["certificates"] = certificates
@@ -58,9 +58,3 @@ class BlogView(generic.ListView):
 class BlogDetailView(generic.DetailView):
 	model = Blog
 	template_name = "main/blog-detail.html"
-    
-
-    
-
-
-    
