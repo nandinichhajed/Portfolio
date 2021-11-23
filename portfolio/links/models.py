@@ -8,4 +8,14 @@ class Links(models.Model):
     linkdin = models.CharField(max_length=200)
     twitter = models.CharField(max_length=200)
     github = models.CharField(max_length=200)
+
+class Videos(models.Model):
+    title = models.CharField(max_length=100)
+    video = models.FileField(upload_to='mediafiles')
     
+    class Meta:
+        verbose_name = 'video'
+        verbose_name_plural = 'videos'
+        
+    def __str__(self):
+        return self.title

@@ -1,24 +1,17 @@
 from django.contrib import admin
-from .models import Links
+from .models import Links, Videos
 # Register your models here.
 
 class LinksAdmin(admin.ModelAdmin):
     list_display = ('id', 'github', 'linkdin')
     list_display_links = ('id', 'github')
-    
+
+class VideosAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title')
+    list_display_links = ('id', 'title')
     
 admin.site.register(Links, LinksAdmin)
+admin.site.register(Videos, VideosAdmin)
 
 
-# class YtAdmin(admin.ModelAdmin):
-#     def myphoto(self, object):
-#         return format_html('<img src="{}" width="40" />'.format(object.photo.url))
 
-#     list_display = ('id', 'name', 'myphoto', 'subs_count', 'is_featured')
-#     search_fields = ('name', 'camera_type')
-#     list_filter = ('city', 'camera_type')
-#     list_display_links = ('id', 'name')
-#     list_editable = ('is_featured',)
-
-
-# admin.site.register(Youtuber, YtAdmin)
