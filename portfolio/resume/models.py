@@ -63,7 +63,7 @@ class Testimonial(models.Model):
         return self.name
 
 class Media(models.Model):
-    image = models.ImageField(upload_to="mediafiles", blank=True, null=True)
+    image = models.ImageField(upload_to="media", blank=True, null=True)
     url = models.URLField(blank=True, null=True)
     name = models.CharField(blank=True, null=True, max_length=200)
     is_image = models.BooleanField(default=True)
