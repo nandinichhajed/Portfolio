@@ -62,24 +62,6 @@ class Testimonial(models.Model):
     def __str__(self):
         return self.name
 
-class Media(models.Model):
-    image = models.ImageField(upload_to="media", blank=True, null=True)
-    url = models.URLField(blank=True, null=True)
-    name = models.CharField(blank=True, null=True, max_length=200)
-    is_image = models.BooleanField(default=True)
-
-    class Meta:
-        verbose_name_plural = 'Media Files'
-        verbose_name = 'Media Files'
-        ordering = ["name"]
-    
-    def save(self, *args, **kwargs):
-        if self.url:
-            self.is_image = False
-        super(Media, self).save(*args, **kwargs)
-    
-    def __str__(self):
-        return self.name
 
 class Portfolio(models.Model):
     date = models.DateTimeField(blank=True, null=True)

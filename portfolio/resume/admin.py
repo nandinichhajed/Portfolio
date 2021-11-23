@@ -28,15 +28,6 @@ class TestimonialAdmin(admin.ModelAdmin):
     list_display_links = ('id', 'name')
     
 
-@admin.register(Media)
-class MediaAdmin(admin.ModelAdmin):
-    def myphoto(self, object):
-        return format_html('<img src="{}" width="40" />'.format(object.image.url))
-    
-    list_display = ('id','name', 'myphoto')
-    list_display_links = ('id', 'name')
-    
-
 @admin.register(Portfolio)
 class PortfolioAdmin(admin.ModelAdmin):
     def myphoto(self, object):

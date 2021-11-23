@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Links
+from .models import Links, Videos
 # Create your views here.
 
 def links(request):
@@ -8,3 +8,10 @@ def links(request):
         'links' : links, 
     }
     return render(request, 'main/footer.html', data)
+
+def videos(request):
+    videos = Videos.objects.all()
+    data = {
+        'videos' : videos, 
+    }
+    return render(request, 'main/portfolio-detail.html', data)

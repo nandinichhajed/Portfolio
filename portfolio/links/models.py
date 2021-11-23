@@ -10,8 +10,9 @@ class Links(models.Model):
     github = models.CharField(max_length=200)
 
 class Videos(models.Model):
-    title = models.CharField(max_length=100)
-    video = models.FileField(upload_to='mediafiles')
+    title = models.CharField(max_length=100, blank=True, null=True)
+    video = models.FileField(upload_to='media', blank=True, null=True)
+    link = models.CharField(max_length=200, blank=True, null=True)
     
     class Meta:
         verbose_name = 'video'
@@ -19,3 +20,14 @@ class Videos(models.Model):
         
     def __str__(self):
         return self.title
+    
+class Image(models.Model):
+    name = models.CharField(max_length=100, blank=True, null=True, )
+    image = models.ImageField(upload_to="media", blank=True, null=True)
+    
+    class Meta:
+        verbose_name = 'image'
+        verbose_name_plural = 'images'
+    
+    def __str__(self):
+        return self.name

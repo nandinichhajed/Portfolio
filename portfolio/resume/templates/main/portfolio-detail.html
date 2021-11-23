@@ -50,8 +50,17 @@ Start Content
     <div class="container">
       {{object.body|safe}}
     </div>
+
+    {% comment %} for vdo links {% endcomment %}
+    <section class="video container text-center">
+      <video width="320" height="240" autoplay>
+        <source src="{{ all.link }}" type="video/mp4">
+      </video>
+    </section>
+
   </div>
 </section>
+
 <!-- ================================
 End Content
 ================================= -->
