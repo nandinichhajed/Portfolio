@@ -71,6 +71,7 @@ class Portfolio(models.Model):
     image = models.ImageField(blank=True, upload_to="portfolio")
     slug = models.SlugField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
+    github_link = models.CharField(max_length=200, null=True, blank=True)
 
     class Meta:
         verbose_name_plural = 'Portfolio Profiles'

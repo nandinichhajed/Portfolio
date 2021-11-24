@@ -170,12 +170,18 @@ Start Content
           <div class="row g-4 align-items-center">
             <div class="col-md-auto">
               <div class="portfolioImgCol">
+                
+                {% comment %} <a href="{{p.github_link}}"><img src="{{p.image.url}}" alt="..."></a> {% endcomment %}
                 <a href="{% url 'main:portfolio' slug=p.slug %}"><img src="{{p.image.url}}" alt="..."></a>
+              
               </div>
             </div>
             <div class="col-md">
               <div class="portfolioContentCol">
+                
+                {% comment %} <h4 class="lgTitle"><a href="{{p.github_link}}">{{p.name}}</a></h4> {% endcomment %}
                 <h4 class="lgTitle"><a href="{% url 'main:portfolio' slug=p.slug %}">{{p.name}}</a></h4>
+
                 <ul class="portfolioOption">
                   <li><span class="dateLbl">{{p.date.year}}</span></li>
                 </ul>
